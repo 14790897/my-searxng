@@ -27,11 +27,11 @@ cp .env.example .env
 
 按需编辑 `.env` 文件：
 
-| 变量 | 说明 | 默认值 |
-|------|------|--------|
+| 变量              | 说明         | 默认值   |
+| ----------------- | ------------ | -------- |
 | `SEARXNG_VERSION` | 镜像版本标签 | `latest` |
-| `SEARXNG_HOST` | 监听地址 | `[::]` |
-| `SEARXNG_PORT` | 监听端口 | `8080` |
+| `SEARXNG_HOST`    | 监听地址     | `[::]`   |
+| `SEARXNG_PORT`    | 监听端口     | `8080`   |
 
 ### 2. 启动服务
 
@@ -44,7 +44,12 @@ docker compose up -d
 打开浏览器访问 `http://localhost:8080`
 
 ### 4. 右上角设置配置搜索引擎
+
 ![设置配置搜索引擎](./image.png)
+
+### 其他安装方法 exe
+
+https://github.com/mbaozi/SearXNGforWindows
 
 ## 管理命令
 
@@ -78,9 +83,9 @@ docker compose down
 
 ## 容器说明
 
-| 服务 | 镜像 | 用途 |
-|------|------|------|
-| `core` | `searxng/searxng` | SearXNG 搜索引擎主体 |
+| 服务     | 镜像                     | 用途                   |
+| -------- | ------------------------ | ---------------------- |
+| `core`   | `searxng/searxng`        | SearXNG 搜索引擎主体   |
 | `valkey` | `valkey/valkey:9-alpine` | 缓存服务（Redis 替代） |
 
 ## 数据持久化
@@ -102,15 +107,15 @@ curl "http://localhost:8080/search?q=你好&language=zh-CN&safesearch=0&categori
 
 ### 常用参数
 
-| 参数 | 说明 | 可选值 |
-|------|------|--------|
-| `q` | 搜索关键词 | 任意字符串 |
-| `format` | 返回格式 | `html` / `json` |
-| `language` | 搜索语言 | `zh-CN`, `en-US`, `auto` 等 |
-| `safesearch` | 安全搜索 | `0`（关闭）/ `1`（中等）/ `2`（严格） |
-| `categories` | 搜索分类 | `general`, `images`, `videos`, `news`, `files`, `science`, `social_media` 等 |
-| `engines` | 指定搜索引擎 | 逗号分隔，如 `google,bing,duckduckgo` |
-| `pageno` | 页码 | 从 `1` 开始 |
+| 参数         | 说明         | 可选值                                                                       |
+| ------------ | ------------ | ---------------------------------------------------------------------------- |
+| `q`          | 搜索关键词   | 任意字符串                                                                   |
+| `format`     | 返回格式     | `html` / `json`                                                              |
+| `language`   | 搜索语言     | `zh-CN`, `en-US`, `auto` 等                                                  |
+| `safesearch` | 安全搜索     | `0`（关闭）/ `1`（中等）/ `2`（严格）                                        |
+| `categories` | 搜索分类     | `general`, `images`, `videos`, `news`, `files`, `science`, `social_media` 等 |
+| `engines`    | 指定搜索引擎 | 逗号分隔，如 `google,bing,duckduckgo`                                        |
+| `pageno`     | 页码         | 从 `1` 开始                                                                  |
 
 更多参数请参考 [SearXNG Search API](https://docs.searxng.org/dev/search_api.html)。
 
