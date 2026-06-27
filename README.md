@@ -43,6 +43,9 @@ docker compose up -d
 
 打开浏览器访问 `http://localhost:8080`
 
+### 4. 右上角设置配置搜索引擎
+![设置配置搜索引擎](./image.png)
+
 ## 管理命令
 
 ```bash
